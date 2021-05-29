@@ -6,13 +6,14 @@ import ScreenContainer from '@common/ScreenContainer';
 import WhiteHeader from '@common/headers/WhiteHeader';
 import LocationBlueBlock from '@common/blocks/LocationBlueBlock';
 import LiveTealBlock from '@common/blocks/LiveTealBlock';
-import Button from '@common/Button';
+import TotalBottomBlock from '@common/blocks/TotalBottomBlock';
 import SectionTitle from '@common/SectionTitle';
 import RangeInput from '@common/inputs/RangeInput';
 import TextInput from '@common/inputs/TextInput';
 import RoundedCard from '@common/cards/RoundedCard';
 import CheckWithLabel from '@common/CheckWithLabel';
 import ItemRequestCard from '@common/cards/ItemRequestCard';
+import ProcessingRequest from '@screens/patron/ProcessingRequest';
 
 import orangeIncreaseIcon2 from '@images/orange-increase-icon-2.svg';
 import { useRequest } from '@queries/stork/requests';
@@ -20,8 +21,11 @@ import { useMutationCreateBid } from '@mutations/stork/bids';
 
 const mapItemToRender = (item) => {
   const { id, description, ...info } = item;
+  const priceRangeLow = info?.price_range_low;
   const priceRangeHigh = info?.price_range_high;
+  const weightRangeLow = info?.weight_range_low;
   const quantity = info?.quantity_max;
+
   return {
     id,
     photoUrl:
@@ -34,6 +38,8 @@ const mapItemToRender = (item) => {
     amount1: `$${priceRangeHigh * quantity}`,
     amount2: '£1363.71',
     description,
+    priceRangeLow: `$${priceRangeLow}`,
+    weightRangeLow,
     quantity,
   };
 };
@@ -58,8 +64,8 @@ const getRequestInfo = (request) => {
       amount: '£973.80',
     },
     total: {
-      dollars: `$${request?.price_total ?? 0}`,
-      euros: '£3716.65',
+      mainAmount: `$${request?.price_total ?? 0}`,
+      secondaryAmount: '£3716.65',
     },
   };
 };
@@ -73,7 +79,7 @@ const StorkBidReview = () => {
   const [willingToPay, setWillingToPay] = useState(initialInfo.willingToPay);
   const history = useHistory();
   const mutation = useMutationCreateBid();
-  const { params } = useRouteMatch();
+  const { params, url } = useRouteMatch();
   const { data } = useRequest(params?.requestNumber, {
     onSuccess: (response) => {
       setItemRequests(response?.items?.map(mapItemToRender) ?? []);
@@ -86,21 +92,28 @@ const StorkBidReview = () => {
   );
 
   const onClickLiveAvatar = () => {};
+  const onClickItem = ({ id, ...props }) => () => {
+    history.push(`${url}/items/${id}`, props);
+  };
   const onClickCounter = () => {
     const onSuccess = () => {};
     const onError = () => {};
     const bidData = {
       patron: Number(params?.patronId ?? ''),
-      product: 3,
       request: state?.requestId,
       price_bid: willingToPay,
-      quantity: 2,
     };
     mutation.mutate(bidData, { onSuccess, onError });
   };
   const questionClassname = 'font-gotham-book text-blue-gray text-sm';
 
-  return (
+  return mutation.isLoading ? (
+    <ProcessingRequest
+      title="Sending offer!"
+      paragraph1={`${state?.name ?? 'Patron'} may either accept or`}
+      paragraph2="counter your offer"
+    />
+  ) : (
     <ScreenContainer HeaderComponent={HeaderComponent}>
       <LiveTealBlock
         onClickAvatar={onClickLiveAvatar}
@@ -122,7 +135,10 @@ const StorkBidReview = () => {
             />
             {itemRequests.map(({ id, ...props }) => (
               <div className="mb-4" key={id}>
-                <ItemRequestCard {...props} />
+                <ItemRequestCard
+                  {...props}
+                  onClick={onClickItem({ id, ...props })}
+                />
               </div>
             ))}
             <SectionTitle
@@ -202,39 +218,12 @@ const StorkBidReview = () => {
             </RoundedCard>
           </div>
         </div>
-        <div className="p-3 border-t bg-white container fixed bottom-0 flex flex-col">
-          <div className="flex justify-between px-4 mb-4 items-center">
-            <p className="font-gotham-medium text-blue-gray">TOTAL</p>
-            <div>
-              <p className="font-gotham-medium text-orange text-xl text-right">
-                {requestInfo.total.dollars}
-              </p>
-              <p className="font-gotham-medium text-blue-gray text-right">
-                {requestInfo.total.euros}
-              </p>
-            </div>
-          </div>
-          <div className="flex">
-            <div className="flex-1">
-              <Button
-                className="w-full text-base font-gotham-bold"
-                label="COUNTER (2)"
-                onClick={onClickCounter}
-                disabled={false}
-                color="orange"
-              />
-            </div>
-            <div className="w-3" />
-            <div className="flex-1">
-              <Button
-                className="w-full text-base font-gotham-bold"
-                label="ACCEPT"
-                onClick={() => {}}
-                disabled={false}
-              />
-            </div>
-          </div>
-        </div>
+        <TotalBottomBlock
+          orangeAmount={requestInfo.total.mainAmount}
+          blackAmount={requestInfo.total.secondaryAmount}
+          buttonLabel="SEND OFFER"
+          onClickSubmit={onClickCounter}
+        />
       </div>
     </ScreenContainer>
   );
