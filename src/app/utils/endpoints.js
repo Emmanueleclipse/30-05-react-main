@@ -1,4 +1,6 @@
-const { REACT_APP_API_URL: API_URL } = process.env;
+// const { REACT_APP_API_URL: API_URL } = process.env;
+
+const API_URL = 'http://storkapidev-env.eba-5yhprdy3.us-east-2.elasticbeanstalk.com:80';
 
 export default {
   login: `${API_URL}/api/login`,

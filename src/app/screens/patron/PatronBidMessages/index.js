@@ -36,6 +36,8 @@ const PatronBidMessages = () => {
     const dataBlob = new Blob([], {
       type: 'application/json',
     });
+
+    // TODO: Update formData
     const formData = new FormData();
     formData.append('jsondata', dataBlob);
     formData.append('text', inputMessage);

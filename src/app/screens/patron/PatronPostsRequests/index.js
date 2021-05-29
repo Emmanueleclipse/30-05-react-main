@@ -10,7 +10,6 @@ import RequestCard from '@common/cards/RequestCard';
 const PatronPostsRequests = () => {
   const history = useHistory();
   const { data } = useRequests();
-  console.log('data', data);
 
   const regionTitleClass =
     'font-montserrat font-bold text-blue-gray text-xl tracking-1/5 px-3 mt-8 mb-4';
@@ -25,10 +24,11 @@ const PatronPostsRequests = () => {
     <>
       {/* TODO: Show dynamic Region */}
       <p className={regionTitleClass}>CAIRO</p>
-      {data?.requests ?
+      {data?.requests?.length > 0 ?
         data.requests.map(({ id, ...props }) => {
           return (
             <div className="mb-3" key={id}>
+              {/* TODO: Update props for 'RequestCard' according to API response */}
               <RequestCard {...props} onClick={onClickCard({ id, ...props })} />
             </div>
           );
