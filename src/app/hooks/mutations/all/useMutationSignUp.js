@@ -11,4 +11,3 @@ const useMutationSignUp = createMutationToPost(endpoints.signup, {
 });
 
 export default useMutationSignUp;
-
