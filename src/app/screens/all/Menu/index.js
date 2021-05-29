@@ -9,16 +9,17 @@ import menuMessagesIcon from '@images/menu-messages.svg';
 import menuRequestsIcon from '@images/menu-requests.svg';
 import menuPatronRequestsIcon from '@images/menu-patron-requests.svg';
 import menuTripsIcon from '@images/menu-trips.svg';
+import menuStorkLiveBidIcon from '@images/menu-stork-live-bid.svg';
 import { useAccount } from '@queries/all';
 
 import MenuItem from './MenuItem';
-import { userInfo } from './mocks';
 
 const Menu = ({ dismiss }) => {
   const { data } = useAccount();
   const history = useHistory();
   const location = `${data?.region}, ${data?.country}`;
-  const photoUrl = data?.profile_picture_url ?? userInfo.photoUrl;
+  const photoUrl = data?.profile_picture_url;
+  const isStork = data?.is_stork ?? false;
 
   const navigateTo = (route) => () => {
     dismiss();
@@ -29,6 +30,7 @@ const Menu = ({ dismiss }) => {
       key: 1,
       iconSrc: menuSearchIcon,
       label: 'SEARCH',
+      onClick: navigateTo('/home/patron/dashboard'),
     },
     {
       key: 2,
@@ -45,11 +47,31 @@ const Menu = ({ dismiss }) => {
       key: 4,
       iconSrc: menuRequestsIcon,
       label: 'MY REQUESTS',
+      onClick: navigateTo('/home/my-requests'),
     },
     {
       key: 5,
       iconSrc: menuSettingsIcon,
       label: 'SETTINGS',
+    },
+  ];
+
+  const storkMenuItems = [
+    {
+      key: 1,
+      iconSrc: menuTripsIcon,
+      label: 'TRIPS',
+    },
+    {
+      key: 2,
+      iconSrc: menuPatronRequestsIcon,
+      label: 'PATRON REQUESTS',
+      onClick: navigateTo('/home/patron-requests/matches'),
+    },
+    {
+      key: 3,
+      iconSrc: menuStorkLiveBidIcon,
+      label: 'STORK LIVE BID',
     },
   ];
 
@@ -68,22 +90,14 @@ const Menu = ({ dismiss }) => {
             <MenuItem key={key} {...props} />
           ))}
           <div className="border-b border-white w-40 my-4" />
-          {!userInfo.isStork && (
+          {!isStork && (
             <p className="font-gotham-medium text-white text-opacity-95 pt-3 pb-2">
               Become a Stork
             </p>
           )}
-          <MenuItem
-            iconSrc={menuTripsIcon}
-            label="TRIPS"
-            disabled={!userInfo.isStork}
-          />
-          <MenuItem
-            iconSrc={menuPatronRequestsIcon}
-            label="PATRON REQUESTS"
-            disabled={!userInfo.isStork}
-            onClick={navigateTo('/home/patron-requests')}
-          />
+          {storkMenuItems.map(({ key, ...props }) => (
+            <MenuItem key={key} {...props} disabled={!isStork} />
+          ))}
         </div>
       </div>
       <div className="flex-1 bg-gray-600 bg-opacity-70" />
