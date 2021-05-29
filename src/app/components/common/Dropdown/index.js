@@ -8,7 +8,7 @@ const Dropdown = (props) => {
   const {
     selected = false,
     value,
-    onClick = () => { },
+    onClick = () => {},
     showOptions = false,
     options = [],
     onSelect,
