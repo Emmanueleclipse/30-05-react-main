@@ -12,8 +12,8 @@ const PatronPostsRequests = () => {
   const { data } = useRequests();
   console.log('data', data);
 
-  // const regionTitleClass =
-  //   'font-montserrat font-bold text-blue-gray text-xl tracking-1/5 px-3 mt-8 mb-4';
+  const regionTitleClass =
+    'font-montserrat font-bold text-blue-gray text-xl tracking-1/5 px-3 mt-8 mb-4';
   const onClickCard = (obj) => () => {
     history.push(`my-requests/${obj.id}/storks`, {
       ...obj,
@@ -23,7 +23,8 @@ const PatronPostsRequests = () => {
 
   return (
     <>
-      {/* <p className={regionTitleClass}>CAIRO</p> */}
+    TODO: Show dynamic Region
+      <p className={regionTitleClass}>CAIRO</p>
       {data && data.requests && data.requests.length > 0 ?
         data.requests.map(({ id, ...props }) => {
           console.log('props', props);

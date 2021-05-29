@@ -41,10 +41,9 @@ const PatronBidMessages = () => {
     formData.append('text', inputMessage);
 
     if (inputMessage) {
-      // TODO: Call API service to send the message
       const newMessage = {
         id: Date.now(), // Temporal id
-        senderId: 32,
+        senderId: 32, // TODO: Replace 'senderId' dynamically
         text: inputMessage,
       };
       const onSuccess = () => {};
