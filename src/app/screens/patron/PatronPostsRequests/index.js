@@ -25,9 +25,9 @@ const PatronPostsRequests = () => {
     <>
       TODO: Show dynamic Region
       <p className={regionTitleClass}>CAIRO</p>
-      {data && data.requests && data.requests.length > 0 ?
+      {data?.requests ?
         data.requests.map(({ id, ...props }) => {
-          console.log('props', props);
+
           return (
             <div className="mb-3" key={id}>
               <RequestCard {...props} onClick={onClickCard({ id, ...props })} />
