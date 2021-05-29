@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import BlueHeader from '@common/headers/BlueHeader';
 import TitleBold from '@common/TitleBold';
 import StorkCard from '@common/cards/StorkCard';
 import Dropdown from '@common/Dropdown';
-import { useLocation } from '@queries/all';
 import usePostRequest from '@contexts/patron/usePostRequest';
 
 import yellowEllipse from '@images/yellow-ellipse.svg';
@@ -13,28 +12,12 @@ import orangeHalfEllipse from '@images/orange-half-ellipse.svg';
 import greyEllipse from '@images/grey-ellipse.svg';
 import tealHalfEllipse from '@images/teal-half-ellipse.svg';
 
-import { mockedUsers } from './mocks';
+import { mockedRegions, mockedUsers } from './mocks';
 
 const PatronDashboard = () => {
   const history = useHistory();
-  const { data } = useLocation();
-
   const { location, updateLocation } = usePostRequest();
   const [showRegions, setShowRegions] = useState(false);
-  const [regions, setRegions] = useState([]);
-
-  useEffect(() => {
-    const newLocation = data?.countries?.map((country, index) => {
-        return {
-          id: index + 1,
-          label: country[0].toUpperCase() + country.slice(1),
-          country,
-          region: country,
-        };
-      });
-
-    setRegions(newLocation);
-  }, []);
 
   const onSelectRegion = (regionSelected) => {
     updateLocation(regionSelected);
@@ -68,7 +51,7 @@ const PatronDashboard = () => {
           buttonDisabled={location.id === null}
           onClickButton={onClickPostRequest}
           withBottomButton
-          onClickLeft={history.goBack}
+          onClickLeft={() => {}}
         >
           <div className="pt-5 pb-14">
             <TitleBold
@@ -83,7 +66,7 @@ const PatronDashboard = () => {
                 value={location.label}
                 selected={location.id !== null}
                 showOptions={showRegions}
-                options={regions}
+                options={mockedRegions}
                 onSelect={onSelectRegion}
               />
             </div>
