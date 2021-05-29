@@ -4,29 +4,35 @@
 
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { useRequests } from '@queries/patron/requests';
 import RequestCard from '@common/cards/RequestCard';
-import { cairoRequests } from './mocks';
 
 const PatronPostsRequests = () => {
   const history = useHistory();
+  const { data } = useRequests();
+  console.log('data', data);
+
   const regionTitleClass =
     'font-montserrat font-bold text-blue-gray text-xl tracking-1/5 px-3 mt-8 mb-4';
-  const onClickCard = (data) => () => {
-    history.push(`my-requests/${data.id}/storks`, {
-      ...data,
+  const onClickCard = (obj) => () => {
+    history.push(`my-requests/${obj.id}/storks`, {
+      ...obj,
       fromTo: 'From Cairo to Boston',
     });
   };
 
   return (
     <>
+      {/* TODO: Show dynamic Region */}
       <p className={regionTitleClass}>CAIRO</p>
-      {cairoRequests.map(({ id, ...props }) => (
-        <div className="mb-3" key={id}>
-          <RequestCard {...props} onClick={onClickCard({ id, ...props })} />
-        </div>
-      ))}
+      {data?.requests ?
+        data.requests.map(({ id, ...props }) => {
+          return (
+            <div className="mb-3" key={id}>
+              <RequestCard {...props} onClick={onClickCard({ id, ...props })} />
+            </div>
+          );
+        }) : <p className="text-center mt-5">No request found!</p>}
     </>
   );
 };
