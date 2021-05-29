@@ -11,26 +11,14 @@ import Button from '@common/Button';
 import RangeInput from '@common/inputs/RangeInput';
 import ItemRequestCard from '@common/cards/ItemRequestCard';
 import LocationBlueBlock from '@common/blocks/LocationBlueBlock';
-import ProcessingRequest from '@screens/patron/ProcessingRequest';
+import PatronRequestPosting from '@screens/patron/PatronRequestPosting';
 
-import {
-  useLocation,
-  useLocationByCountry,
-  useLocationByCountryRegion,
-} from '@queries/all';
 import { useMutationCreateRequest } from '@mutations/patron/requests';
 import usePostRequest from '@contexts/patron/usePostRequest';
 import addItemButton from '@images/add-item-button.svg';
 
 import { mockedShippingOptions } from './mocks';
 import './styles.css';
-
-const mapToDropdownOptions = (label, index) => {
-  return {
-    id: index,
-    label,
-  };
-};
 
 const renderItemRequest = (props) => {
   const {
@@ -71,53 +59,6 @@ const PatronRequest = () => {
     resetInfo,
   } = usePostRequest();
   const initialOrderTitleStyle = 'text-2xs border-b-2';
-
-  /**
-   * Dropdowns hooks for country, region and city
-   * TODO: Make them searchable by text input
-   */
-  const [showCountryOptions, setShowCountryOptions] = useState(false);
-  const [countryOption, setCountryOption] = useState({
-    id: null,
-    label: 'Enter Country',
-  });
-  const [showRegionOptions, setShowRegionOptions] = useState(false);
-  const [regionOption, setRegionOption] = useState({
-    id: null,
-    label: 'Enter Region/State',
-  });
-  const [showCityOptions, setShowCityOptions] = useState(false);
-  const [cityOption, setCityOption] = useState({
-    id: null,
-    label: 'Enter City',
-  });
-
-  const { data: dataCountries } = useLocation();
-  const countryOptions =
-    dataCountries?.countries?.map(mapToDropdownOptions) ?? [];
-
-  const { data: dataRegions } = useLocationByCountry(countryOption.label);
-  const regionOptions = dataRegions?.regions?.map(mapToDropdownOptions) ?? [];
-
-  const { data: dataCities } = useLocationByCountryRegion(
-    countryOption.label,
-    regionOption.label,
-  );
-  const cityOptions = dataCities?.cities?.map(mapToDropdownOptions) ?? [];
-
-  const onSelectCountryOption = (optionSelected) => {
-    setCountryOption(optionSelected);
-    setShowCountryOptions(false);
-  };
-  const onSelectRegionOption = (optionSelected) => {
-    setRegionOption(optionSelected);
-    setShowRegionOptions(false);
-  };
-  const onSelectCityOption = (optionSelected) => {
-    setCityOption(optionSelected);
-    setShowCityOptions(false);
-  };
-
   const [showShippingOptions, setShowShippingOptions] = useState(false);
   const [orderTitleStyles, setOrderTitleStyles] = useState(
     initialOrderTitleStyle,
@@ -131,7 +72,6 @@ const PatronRequest = () => {
     name: '',
     address1: '',
     address2: '',
-    zipCode: '',
     startDate: '',
     endDate: '',
     flexible: true,
@@ -161,8 +101,11 @@ const PatronRequest = () => {
     }
   };
 
-  const onChangeData = (data) => () => {
-    setFormInfo({ ...formInfo, ...data });
+  const onClickCheckFlexible = (flexible) => () => {
+    setFormInfo({ ...formInfo, flexible });
+  };
+  const onClickCheckShipping = (shipping) => () => {
+    setFormInfo({ ...formInfo, shipping });
   };
   const onSelectShippingOption = (optionSelected) => {
     setShippingOption(optionSelected);
@@ -193,11 +136,7 @@ const PatronRequest = () => {
   };
 
   return mutation.isLoading ? (
-    <ProcessingRequest
-      title="Posting your request!"
-      paragraph1="We’ll notify you when Storks"
-      paragraph2="start bidding."
-    />
+    <PatronRequestPosting />
   ) : (
     <div className="h-screen">
       <BlueHeader roundedClass="rounded-b-none" onClickLeft={history.goBack}>
@@ -312,44 +251,6 @@ const PatronRequest = () => {
                     value={formInfo.address2}
                     onChange={onChange('address2')}
                   />
-                  <TextInput
-                    placeholder="Enter Zip Code"
-                    value={formInfo.zipCode}
-                    onChange={onChange('zipCode')}
-                  />
-                  <Dropdown
-                    className="py-3 justify-start border-b"
-                    imageClassName="h-3 w-3 right-2"
-                    labelClassName="font-gotham-medium text-xs ml-3"
-                    onClick={() => setShowCountryOptions(!showCountryOptions)}
-                    value={countryOption.label}
-                    selected={countryOption.id !== null}
-                    showOptions={showCountryOptions}
-                    options={countryOptions}
-                    onSelect={onSelectCountryOption}
-                  />
-                  <Dropdown
-                    className="py-3 justify-start border-b"
-                    imageClassName="h-3 w-3 right-2"
-                    labelClassName="font-gotham-medium text-xs ml-3"
-                    onClick={() => setShowRegionOptions(!showRegionOptions)}
-                    value={regionOption.label}
-                    selected={regionOption.id !== null}
-                    showOptions={showRegionOptions}
-                    options={regionOptions}
-                    onSelect={onSelectRegionOption}
-                  />
-                  <Dropdown
-                    className="py-3 justify-start border-b"
-                    imageClassName="h-3 w-3 right-2"
-                    labelClassName="font-gotham-medium text-xs ml-3"
-                    onClick={() => setShowCityOptions(!showCityOptions)}
-                    value={cityOption.label}
-                    selected={cityOption.id !== null}
-                    showOptions={showCityOptions}
-                    options={cityOptions}
-                    onSelect={onSelectCityOption}
-                  />
                   <p className="font-gotham-bold text-blue-gray text-xs mt-6">
                     <input
                       type="date"
@@ -370,13 +271,13 @@ const PatronRequest = () => {
                       className="flex-3"
                       label="Flexible"
                       active={formInfo.flexible}
-                      onClick={onChangeData({ flexible: true })}
+                      onClick={onClickCheckFlexible(true)}
                     />
                     <CheckWithLabel
                       className="flex-4"
                       label="Not Flexible"
                       active={!formInfo.flexible}
-                      onClick={onChangeData({ flexible: false })}
+                      onClick={onClickCheckFlexible(false)}
                     />
                   </div>
                 </RoundedCard>
@@ -390,13 +291,13 @@ const PatronRequest = () => {
                     className="flex-3"
                     label="Shipping"
                     active={formInfo.shipping}
-                    onClick={onChangeData({ shipping: true })}
+                    onClick={onClickCheckShipping(true)}
                   />
                   <CheckWithLabel
                     className="flex-4"
                     label="Drop-off"
                     active={!formInfo.shipping}
-                    onClick={onChangeData({ shipping: false })}
+                    onClick={onClickCheckShipping(false)}
                     description="Due to COVID19 this option is not currently available."
                   />
                 </div>

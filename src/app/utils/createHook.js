@@ -1,5 +1,6 @@
 import { useQuery, useMutation } from 'react-query';
-import useAxios from '@contexts/all/useAxios';
+import axios from 'axios';
+import useAxios from '@contexts/useAxios';
 
 export const createQueryHook = (key, path) => (queryParams) => {
   const Axios = useAxios();
@@ -11,13 +12,15 @@ export const createQueryHook = (key, path) => (queryParams) => {
   return useQuery(key, getInstances);
 };
 
-export const createQueryOneHook = (key, getPath) => (instanceId, config) => {
-  const Axios = useAxios();
+export const createQueryOneHook = (key, getPath) => {
   const getInstanceById = async (id) => {
-    const { data } = await Axios.get(getPath(id));
+    const { data } = await axios.get(getPath(id));
     return data;
   };
-  return useQuery([key, instanceId], () => getInstanceById(instanceId), config);
+
+  return (instanceId) => {
+    return useQuery([key, instanceId], () => getInstanceById(instanceId));
+  };
 };
 
 export const createMutationToPost = (path, sideEffects) => () => {

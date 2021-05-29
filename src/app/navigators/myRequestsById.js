@@ -5,7 +5,7 @@ import PatronStorksAvailable from '@screens/patron/PatronStorksAvailable';
 import PatronBidReview from '@screens/patron/PatronBidReview';
 import PatronBidStork from '@screens/patron/PatronBidStork';
 
-const MyRequestsByIdNavigator = () => {
+const RequestsByStorkNavigator = () => {
   const match = useRouteMatch();
 
   return (
@@ -23,4 +23,4 @@ const MyRequestsByIdNavigator = () => {
   );
 };
 
-export default MyRequestsByIdNavigator;
+export default RequestsByStorkNavigator;

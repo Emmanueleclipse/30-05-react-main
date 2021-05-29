@@ -69,4 +69,36 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('install', event => {
+  console.log('V1 installings…');
+});
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'TITLE';
+  const options = {
+    body: 'Work.',
+    // Notification icon & badge
+    // icon: 'images/icon.png',
+    // badge: 'images/badge.png'
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', function(event) {
+  console.log('[Service Worker] Notification click Received.');
+
+  event.notification.close();
+
+  event.waitUntil(
+    //action trigger when user click on notification popup
+    // clients.openWindow('https://developers.google.com/web/')
+  );
+});
+
+
+
 // Any other custom service worker logic can go here.

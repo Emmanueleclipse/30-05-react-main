@@ -9,12 +9,14 @@ import { useHistory } from 'react-router-dom';
 import sendIcon from '@images/send-icon.svg';
 import WhiteHeader from '@common/headers/WhiteHeader';
 import ScreenContainer from '@common/ScreenContainer';
+import useMutationPostMessage from '@mutations/all/useMutationPostMessage';
 
 import BubbleMessage from './BubbleMessage';
-import { mockedMessages, myId } from './mocks';
+import { mockedMessages } from './mocks';
 
 const PatronBidMessages = () => {
   const messagesBottomRef = useRef(null);
+  const mutationBidMessage = useMutationPostMessage();
   const [messages, setMessages] = useState(mockedMessages);
   const [inputMessage, setInputMessage] = useState('');
   const history = useHistory();
@@ -31,13 +33,23 @@ const PatronBidMessages = () => {
     messagesBottomRef.current.scrollIntoView({ behavior: 'smooth' });
   };
   const onClickSendMessage = () => {
+    const dataBlob = new Blob([], {
+      type: 'application/json',
+    });
+    const formData = new FormData();
+    formData.append('jsondata', dataBlob);
+    formData.append('text', inputMessage);
+
     if (inputMessage) {
       // TODO: Call API service to send the message
       const newMessage = {
         id: Date.now(), // Temporal id
-        senderId: myId,
+        senderId: 32,
         text: inputMessage,
       };
+      const onSuccess = () => {};
+      const onError = () => {};
+      mutationBidMessage.mutate(formData, { onSuccess, onError });
       setMessages([...messages, newMessage]);
       setInputMessage('');
       scrollToBottom();

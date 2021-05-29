@@ -1,14 +1,13 @@
 import { createMutationToPost } from '@utils/createHook';
 import endpoints from '@utils/endpoints';
 
-const useMutationSignUp = createMutationToPost(endpoints.signup, {
+const useMutationPostBidMessage = createMutationToPost(endpoints.bidMessages, {
   onSuccess: () => {
-    localStorage.removeItem('isStork');
+    // TODO: Handle event
   },
   onError: () => {
     // TODO: Handle event
   },
 });
 
-export default useMutationSignUp;
-
+export default useMutationPostBidMessage;

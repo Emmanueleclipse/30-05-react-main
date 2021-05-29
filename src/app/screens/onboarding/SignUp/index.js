@@ -5,7 +5,7 @@ import TitleBold from '@common/TitleBold';
 import TextInput from '@common/inputs/TextInput';
 import forwardArrowOrange from '@images/forward-arrow-orange.svg';
 import storkLogo from '@images/stork-logo.svg';
-import useSignUpForm from '@contexts/all/useSignUpForm';
+import useSignUpForm from '@contexts/useSignUpForm';
 
 const SignUp = () => {
   const { formInfo: initialFormInfo, updateFormInfo } = useSignUpForm();

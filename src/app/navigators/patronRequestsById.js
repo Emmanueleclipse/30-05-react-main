@@ -7,7 +7,6 @@ import StorkFinalShipping from '@screens/stork/StorkFinalShipping';
 import StorkFinalShippingBox from '@screens/stork/StorkFinalShippingBox';
 import StorkFinalShippingItems from '@screens/stork/StorkFinalShippingItems';
 import StorkBidReview from '@screens/stork/StorkBidReview';
-import StorkBidItemReview from '@screens/stork/StorkBidItemReview';
 
 const PatronRequestsByIdNavigator = () => {
   const match = useRouteMatch();
@@ -25,9 +24,6 @@ const PatronRequestsByIdNavigator = () => {
       </Route>
       <Route path={`${match.path}/:patronId/shipping/items`}>
         <StorkFinalShippingItems />
-      </Route>
-      <Route path={`${match.path}/:patronId/live-bid/items/:itemId`}>
-        <StorkBidItemReview />
       </Route>
       <Route path={`${match.path}/:patronId/live-bid`}>
         <StorkBidReview />

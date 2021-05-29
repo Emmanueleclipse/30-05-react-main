@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import Button from '@common/Button';
 
 const TotalBottomBlock = (props) => {
-  const { orangeAmount, blackAmount, onClickSubmit, buttonLabel } = props;
+  const { amount1, amount2, onClickSubmit, buttonLabel } = props;
   return (
-    <div className="px-4 py-3 border-t bg-white container fixed bottom-0 flex flex-col">
+    <div className="p-3 border-t bg-white container fixed bottom-0 flex flex-col">
       <div className="flex justify-between px-4 mb-4 items-center">
         <p className="font-gotham-medium text-blue-gray">TOTAL</p>
         <div>
           <p className="font-gotham-medium text-orange text-2xl text-right">
-            {orangeAmount}
+            {amount1}
           </p>
           <p className="font-gotham-medium text-blue-gray text-right">
-            {blackAmount}
+            {amount2}
           </p>
         </div>
       </div>
@@ -31,8 +31,8 @@ const TotalBottomBlock = (props) => {
 };
 
 TotalBottomBlock.propTypes = {
-  orangeAmount: PropTypes.string.isRequired,
-  blackAmount: PropTypes.string.isRequired,
+  amount1: PropTypes.string.isRequired,
+  amount2: PropTypes.string.isRequired,
   onClickSubmit: PropTypes.func.isRequired,
   buttonLabel: PropTypes.string.isRequired,
 };

@@ -20,11 +20,10 @@ const LocationBlueBlock = ({ title, children, className }) => {
 
 LocationBlueBlock.defaultProps = {
   className: 'py-7',
-  title: '',
 };
 
 LocationBlueBlock.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.element.isRequired,
 };

@@ -10,7 +10,7 @@ import Button from '@common/Button';
 import ResponseCard from '@common/cards/ResponseCard';
 import fileToBase64 from '@utils/fileToBase64';
 import addProfilePicture from '@images/add-profile-picture.svg';
-import useSignUpForm from '@contexts/all/useSignUpForm';
+import useSignUpForm from '@contexts/useSignUpForm';
 import useMutationSignUp from '@mutations/all/useMutationSignUp';
 import useMutationLogin from '@mutations/all/useMutationLogin';
 

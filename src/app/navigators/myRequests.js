@@ -64,7 +64,7 @@ const RequestsNavigator = () => {
   return (
     <div className="h-screen flex flex-col">
       <WhiteHeader
-        onClickLeft={() => {}}
+        onClickLeft={() => history.push('/home')}
         title="MY REQUESTS"
         withRightIcons
         withAvatar

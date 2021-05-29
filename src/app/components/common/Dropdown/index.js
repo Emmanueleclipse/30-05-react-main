@@ -27,9 +27,7 @@ const Dropdown = (props) => {
   return (
     <div className={`flex bg-white relative cursor-pointer ${className}`}>
       <div className="flex items-center">
-        <p className={`${labelColorClass} ${labelClassName} capitalize`}>
-          {value}
-        </p>
+        <p className={`${labelColorClass} ${labelClassName}`}>{value}</p>
         <img
           className={`absolute ${imageClassName}`}
           src={showOptions ? dropupArrow : dropdownArrow}
@@ -49,7 +47,7 @@ const Dropdown = (props) => {
               tabIndex={index}
               onKeyPress={(keyInfo) => onKeyPressOption(keyInfo, option)}
             >
-              <p className={`text-blue-gray capitalize ${labelClassName}`}>
+              <p className={`text-blue-gray ${labelClassName}`}>
                 {option.label}
               </p>
             </div>
