@@ -57,8 +57,8 @@ const StorkFinalAdjustment = () => {
           </div>
         </div>
         <TotalBottomBlock
-          amount1={initialInfo.total.amount1}
-          amount2={initialInfo.total.amount2}
+          orangeAmount={initialInfo.total.amount1}
+          blackAmount={initialInfo.total.amount2}
           buttonLabel="SHOPPING COMPLETE"
           onClickSubmit={onClickShoppingComplete}
         />
