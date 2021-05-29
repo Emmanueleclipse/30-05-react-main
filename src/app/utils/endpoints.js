@@ -17,6 +17,10 @@ export default {
     return `${API_URL}/api/patron/delivery?id=${deliveryId}`;
   },
   location: `${API_URL}/api/location`,
+  locationByCountry: (country) => `${API_URL}/api/location?country=${country}`,
+  locationByCountryRegion: (country, region) => {
+    return `${API_URL}/api/location?country=${country}&&region=${region}`;
+  },
   patronRequest: `${API_URL}/api/patron/request`,
   patronRequestById: (requestId) => {
     return `${API_URL}/api/patron/request?request_number=${requestId}`;
