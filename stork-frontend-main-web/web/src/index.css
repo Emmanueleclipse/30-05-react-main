@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  src: url(app/assets/fonts/Gotham/Gotham-Book.otf);
+  font-family: Gotham-Book;
+}
+
+@font-face {
+  src: url(app/assets/fonts/Gotham/Gotham-Medium.otf);
+  font-family: Gotham-Medium;
+}
+
+@font-face {
+  src: url(app/assets/fonts/Gotham/Gotham-Bold.otf);
+  font-family: Gotham-Bold;
+}
+
+@font-face {
+  src: url(app/assets/fonts/Gotham/Gotham-Black.otf);
+  font-family: Gotham-Black;
+}

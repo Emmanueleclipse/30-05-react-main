@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="215.293" height="50" viewBox="0 0 215.293 50">
+    <defs>
+        <style>
+            .cls-1{fill:#7bd9d0}.cls-2{fill:#ff7900}.cls-3{fill:#131437}.cls-4{fill:#f5a33d}
+        </style>
+    </defs>
+    <g id="Stork_Logo" transform="translate(-80 -268.758)">
+        <g id="Group_314" transform="translate(185.211 268.758)">
+            <circle id="Ellipse_1" cx="25" cy="25" r="25" class="cls-1"/>
+            <path id="Path_32" d="M2978.385 382.646a25 25 0 0 1 50 0z" class="cls-2" transform="translate(-2978.385 -357.646)"/>
+        </g>
+        <g id="Group_181" transform="translate(-6913.497 609.417)">
+            <g id="Group_53" transform="translate(7183.791 -340.659)">
+                <path id="Path_27" d="M3147.306 357.646v25a25 25 0 0 0 25-25z" class="cls-2" transform="translate(-3147.306 -357.646)"/>
+                <path id="Path_28" d="M3147.306 432.281v-25a25 25 0 0 1 25 25z" class="cls-3" transform="translate(-3147.306 -382.281)"/>
+            </g>
+            <g id="Group_54" transform="translate(7153.75 -340.659)">
+                <path id="Path_31" d="M3087.663 432.281v-25a25 25 0 0 1 25 25z" class="cls-4" transform="translate(-3087.663 -382.281)"/>
+                <path id="Path_63" d="M3100.163 382.646a12.5 12.5 0 0 0 0-25h-12.5v25z" class="cls-1" transform="translate(-3087.663 -357.646)"/>
+            </g>
+            <g id="Group_56" transform="translate(7043.668 -340.659)">
+                <path id="Path_33" d="M2893.925 407.281h25a25 25 0 0 1-25 25z" class="cls-1" transform="translate(-2881.425 -382.281)"/>
+                <path id="Path_34" d="M2869.107 382.646a25 25 0 0 1 50 0z" class="cls-3" transform="translate(-2869.107 -357.646)"/>
+            </g>
+            <g id="Group_57" transform="translate(6993.497 -340.659)">
+                <path id="Path_35" d="M2819.132 432.281a12.5 12.5 0 0 0 0-25z" class="cls-2" transform="translate(-2794.132 -382.281)"/>
+                <path id="Path_36" d="M2806.814 357.646a12.5 12.5 0 1 0 0 25z" class="cls-1" transform="translate(-2781.815 -357.646)"/>
+                <path id="Path_37" d="M2819.132 357.646v25a25 25 0 0 0 25-25z" class="cls-4" transform="translate(-2794.132 -357.646)"/>
+                <path id="Path_38" d="M2794.5 407.281v25a25 25 0 0 1-25-25z" class="cls-3" transform="translate(-2769.497 -382.281)"/>
+            </g>
+        </g>
+    </g>
+</svg>

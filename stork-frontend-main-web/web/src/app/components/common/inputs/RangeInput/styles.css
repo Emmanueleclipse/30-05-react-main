@@ -1,0 +1,4 @@
+.stork-slider {
+  @apply bg-white border-3;
+  margin-top: -0.55rem;
+}

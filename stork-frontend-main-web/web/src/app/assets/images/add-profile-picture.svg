@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .cls-2{fill:#131437}
+        </style>
+    </defs>
+    <g id="Add_profile_Pic_Icon" transform="translate(-233 -234)">
+        <g id="Item_Photo_Button" transform="translate(165 90)">
+            <g id="Item_Photo_Icon" transform="translate(68 144)">
+                <circle id="Ellipse_18" cx="20" cy="20" r="20" fill="#e8eaeb"/>
+            </g>
+        </g>
+        <g id="Camera_Icon" transform="translate(244 246)">
+            <path id="Path_31" d="M18.711 15.955a2.755 2.755 0 1 1-2.756-2.755 2.755 2.755 0 0 1 2.756 2.755z" class="cls-2" transform="translate(-7.345 -7.345)"/>
+            <path id="Path_32" d="M9.027 3L7.452 4.722h-2.73A1.727 1.727 0 0 0 3 6.444v10.333A1.727 1.727 0 0 0 4.722 18.5H18.5a1.727 1.727 0 0 0 1.722-1.722V6.444A1.727 1.727 0 0 0 18.5 4.722h-2.73L14.194 3zm2.583 12.916a4.305 4.305 0 1 1 4.305-4.305 4.307 4.307 0 0 1-4.304 4.305z" class="cls-2" transform="translate(-3 -3)"/>
+        </g>
+    </g>
+</svg>

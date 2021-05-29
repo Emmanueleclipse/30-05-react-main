@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="291" height="407.09" viewBox="0 0 291 407.09">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_138" fill="none" d="M0 0H291V370H0z" transform="translate(1155.368 582.179)"/>
+        </clipPath>
+        <style>
+            .cls-4{fill:#7bd9d0}
+        </style>
+    </defs>
+    <g id="Onboarding_Stork_Image_6" transform="translate(-1155.368 -582.179)">
+        <g id="Group_398">
+            <g id="Group_397" clip-path="url(#clip-path)">
+                <g id="Mask_Group_2">
+                    <circle id="Ellipse_1" cx="191.5" cy="191.5" r="191.5" fill="#fff" transform="translate(1055.368 536.179)"/>
+                </g>
+            </g>
+        </g>
+        <path id="Path_37" d="M1291.823 889.269l-70.71 70.71a100 100 0 0 0 141.421 0z" class="cls-4"/>
+        <g id="Group_338">
+            <path id="Path_35" fill="#ff7900" d="M1292.4 874.374a32.5 32.5 0 1 0 0-65.009z"/>
+            <path id="Path_36" d="M1292.4 744.356a32.5 32.5 0 0 0 0 65.009z" class="cls-4"/>
+            <path id="Path_37-2" fill="#f5a33d" d="M1292.4 744.356v65.009a65.01 65.01 0 0 0 65.009-65.009z"/>
+            <path id="Path_38" fill="#131437" d="M1292.4 809.365v65.009a65.01 65.01 0 0 1-65.009-65.009h65.009z"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="225" height="211" viewBox="0 0 225 211">
+    <defs>
+        <style>
+            .cls-1{fill:#7bd9d0}.cls-3{fill:#f5a33d}
+        </style>
+    </defs>
+    <g id="Onboarding_Stork_Image_4" transform="translate(-45 -195)">
+        <circle id="Ellipse_1" cx="39.462" cy="39.462" r="39.462" class="cls-1" transform="translate(108.421 241.409)"/>
+        <circle id="Ellipse_71" cx="30.321" cy="30.321" r="30.321" class="cls-1" transform="translate(187.176 254.067)"/>
+        <circle id="Ellipse_72" cx="22.5" cy="22.5" r="22.5" class="cls-1" transform="translate(171.706 195)"/>
+        <path id="Path_32" fill="#ff7900" d="M0 90a90 90 0 0 1 180 0z" transform="rotate(180 135 180.999)"/>
+        <circle id="Ellipse_69" cx="22.5" cy="22.5" r="22.5" class="cls-3" transform="rotate(-90 248 158)"/>
+        <circle id="Ellipse_70" cx="22.5" cy="22.5" r="22.5" class="cls-3" transform="rotate(-90 315.5 90.5)"/>
+        <path id="Path_79" fill="#e8eaeb" d="M0 0v45.308A45.31 45.31 0 0 0 45.309 0z" transform="rotate(-90 150.655 105.654)"/>
+    </g>
+</svg>

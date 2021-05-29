@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#131437;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Add_Quantity_Button" transform="translate(-114.536 -931.555)">
+        <circle id="background-4" cx="22.5" cy="22.5" r="22.5" fill="#7bd9d0" transform="translate(114.536 931.555)"/>
+        <g id="Add_Quantity_Icon">
+            <path id="Line_11-2" d="M0 10.672L0 0" class="cls-2" transform="translate(137.036 948.719)"/>
+            <path id="Line_38-2" d="M0 0L10.672 0" class="cls-2" transform="translate(131.7 954.055)"/>
+        </g>
+    </g>
+</svg>

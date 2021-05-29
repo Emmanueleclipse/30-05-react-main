@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "prettier/react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "arrow-body-style": 0,
+    "import/no-extraneous-dependencies": [0, { "devDependencies": false }],
+    "react/jsx-props-no-spreading": 0,
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": { "multiline": true }
+      }
+    ],
+    "operator-linebreak": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@services", "./src/app/services"],
+          ["@utils", "./src/app/utils"],
+          ["@screens", "./src/app/screens"],
+          ["@images", "./src/app/assets/images"],
+          ["@common", "./src/app/components/common"],
+          ["@constants", "./src/app/constants"],
+          ["@navigators", "./src/app/navigators"],
+          ["@queries", "./src/app/hooks/queries"],
+          ["@mutations", "./src/app/hooks/mutations"],
+          ["@contexts", "./src/app/hooks/contexts"]
+        ]
+      },
+      "extensions": [".js", ".less", ".json", ".vue"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="228" height="233.261" viewBox="0 0 228 233.261">
+    <defs>
+        <style>
+            .cls-2{fill:#f5a33d}.cls-3{fill:#e8eaeb}.cls-4{fill:#ff7900}
+        </style>
+    </defs>
+    <g id="Onboarding_Patron_Image_5" transform="translate(-30 -172.739)">
+        <circle id="Ellipse_1" cx="33.06" cy="33.06" r="33.06" fill="#7bd9d0" transform="translate(116.879 313.758)"/>
+        <circle id="Ellipse_59" cx="7.5" cy="7.5" r="7.5" class="cls-2" transform="translate(168 240)"/>
+        <circle id="Ellipse_60" cx="7.5" cy="7.5" r="7.5" class="cls-3" transform="translate(243 225)"/>
+        <circle id="Ellipse_61" cx="7.5" cy="7.5" r="7.5" class="cls-4" transform="translate(109 180)"/>
+        <path id="Path_32" d="M2978.384 417.646a60 60 0 0 1 120 0z" class="cls-4" transform="rotate(180 1594.193 381.823)"/>
+        <path id="Path_66" d="M2978.384 402.646a45 45 0 0 1 90 0z" class="cls-2" transform="rotate(-90 1490.37 1818.016)"/>
+        <g id="Group_341" transform="rotate(180 114.131 155.37)">
+            <path id="Path_27" d="M0 0v15A15 15 0 0 0 15 0z" class="cls-4"/>
+        </g>
+        <g id="Group_342" transform="rotate(-90 191.5 -3.762)">
+            <path id="Path_27-2" d="M0 0v15A15 15 0 0 0 15 0z" class="cls-2"/>
+        </g>
+        <g id="Group_343" transform="rotate(90 -75.239 189.5)">
+            <path id="Path_27-3" d="M0 0v15A15 15 0 0 0 15 0z" class="cls-3"/>
+        </g>
+    </g>
+</svg>

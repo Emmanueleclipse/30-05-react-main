@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#131437;stroke-width:2.912px}
+        </style>
+    </defs>
+    <g id="Add_Item_Button" transform="translate(-276 -805.736)">
+        <circle id="Teal_Ellipse_Button" cx="30" cy="30" r="30" fill="#7bd9d0" transform="translate(276 805.736)"/>
+        <g id="Add_Item_Icon">
+            <path id="Line_11-2" d="M0 15.54L0 0" class="cls-2" transform="translate(306 827.966)"/>
+            <path id="Line_38-2" d="M0 0L15.54 0" class="cls-2" transform="translate(298.23 835.736)"/>
+        </g>
+    </g>
+</svg>

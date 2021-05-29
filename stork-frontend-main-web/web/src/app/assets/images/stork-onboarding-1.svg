@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="292.12" height="405.758" viewBox="0 0 292.12 405.758">
+    <defs>
+        <clipPath id="uqetsv9oia">
+            <path fill="#fff" stroke="#707070" d="M0 0H214V256H0z" transform="translate(161)"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(-82.88)">
+        <circle cx="22.5" cy="22.5" r="22.5" fill="#f5a33d" transform="translate(82.88 360.758)"/>
+        <path fill="#7bd9d0" d="M2819.132 447.646v-90a90 90 0 0 1 90 90z" transform="rotate(-14.98 1084.64 10641.366)"/>
+        <g clip-path="url(#uqetsv9oia)">
+            <circle cx="160" cy="160" r="160" fill="#ff7900" transform="translate(181.212 -85)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+version: "3"
+services:
+  node:
+    build: ./
+    container_name: storkfe
+    user: "node"
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+      - NPM_USE_PRODUCTION=false
+      - STORK_FE_PORT
+    volumes:
+      - "./:/app"

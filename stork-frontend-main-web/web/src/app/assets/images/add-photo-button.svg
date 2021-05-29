@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="0 0 105 105">
+    <defs>
+        <style>
+            .cls-1{fill:#e8eaeb}.cls-2{fill:none;stroke:#131437;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Item_Photo_Button" transform="translate(-30 -135)">
+        <rect id="Rectangle_1335" width="105" height="105" class="cls-1" rx="20" transform="translate(30 135)"/>
+        <circle id="Ellipse_17" cx="22.5" cy="22.5" r="22.5" class="cls-1" transform="translate(60 167)"/>
+        <g id="Item_Photo_Icon">
+            <circle id="Ellipse_18" cx="21.5" cy="21.5" r="21.5" class="cls-2" transform="translate(61 168)"/>
+            <g id="icon" transform="translate(-395.472 -.015)">
+                <path id="Line_11" d="M0 10.672L0 0" class="cls-2" transform="translate(477.972 184.179)"/>
+                <path id="Line_38" d="M0 0L10.672 0" class="cls-2" transform="translate(472.636 189.515)"/>
+            </g>
+        </g>
+    </g>
+</svg>

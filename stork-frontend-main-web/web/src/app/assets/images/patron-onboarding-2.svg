@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264.121" height="301" viewBox="0 0 264.121 301">
+    <defs>
+        <style>
+            .cls-2{fill:#e8eaeb}.cls-3{fill:#ff7900}
+        </style>
+    </defs>
+    <g id="Onboarding_Patron_Image_2" transform="translate(-65.879 -105)">
+        <circle id="Ellipse_1" cx="33.06" cy="33.06" r="33.06" fill="#7bd9d0" transform="translate(121.212 213)"/>
+        <circle id="Ellipse_55" cx="15" cy="15" r="15" class="cls-2" transform="translate(225 376)"/>
+        <path id="Path_37" d="M2819.132 357.646v60a60 60 0 0 0 60-60z" class="cls-3" transform="translate(-2549.132 -98.646)"/>
+        <path id="Path_64" fill="#f5a33d" d="M2819.132 357.646v30a30 30 0 0 0 30-30z" transform="rotate(90 1480.389 -1011.743)"/>
+        <g id="Group_53" transform="rotate(180 55.44 87.293)">
+            <path id="Path_27" d="M3147.306 357.646v45a45 45 0 0 0 45-45z" class="cls-2" transform="translate(-3147.306 -357.646)"/>
+        </g>
+        <path id="Path_32" d="M2978.385 382.646a25 25 0 0 1 50 0z" class="cls-3" transform="rotate(180 1623.797 243.823)"/>
+    </g>
+</svg>

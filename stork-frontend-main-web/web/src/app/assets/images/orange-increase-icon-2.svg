@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9.748" height="12.121" viewBox="0 0 9.748 12.121">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#eb7000;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="Increase_Chevrons_Icon_Orange" transform="translate(.707 1.414)">
+        <path id="Path_50" d="M10.5 23.667l4.167-4.167 4.167 4.167" class="cls-1" transform="translate(-10.5 -19.5)"/>
+        <path id="Path_51" d="M10.5 13.167L14.667 9l4.167 4.167" class="cls-1" transform="translate(-10.5 -3.167)"/>
+    </g>
+</svg>
