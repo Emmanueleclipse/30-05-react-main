@@ -7,7 +7,7 @@ import PatronOnboarding from '@screens/onboarding/PatronOnboarding';
 import StorkOnboarding from '@screens/onboarding/StorkOnboarding';
 import SignUpNavigator from '@navigators/signUp';
 import HomeNavigator from '@navigators/home';
-import { AxiosProvider } from '@contexts/useAxios';
+import { AxiosProvider } from '@contexts/all/useAxios';
 import ForgotPassword from '@screens/all/ForgotPassword';
 
 const queryClient = new QueryClient();
