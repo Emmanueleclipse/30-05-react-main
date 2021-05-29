@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import RequestCard from '@common/cards/RequestCard';
 import { useSearchRequest } from '@queries/all';
@@ -29,10 +30,13 @@ const mapToRender = ({ patron, request }) => {
     amount2: '£3,716.65',
     statusDescription: `Ship ${endDate} to Unknown`,
     photoUrl,
+    requestNumber: request?.request_number,
+    patronId: request?.patron,
   };
 };
 
-const PatronPostsRequests = () => {
+const StorkRequestsMatches = () => {
+  const history = useHistory();
   const { data, isSuccess } = useSearchRequest({
     // TODO: Hard coded country/region values till define UI interaction to search requests
     country: 'united states',
@@ -41,7 +45,13 @@ const PatronPostsRequests = () => {
   const requests = data?.requests?.map(mapToRender);
   const regionTitleClass =
     'font-montserrat font-bold text-blue-gray text-xl tracking-1/5 px-3 mt-8 mb-4';
-  const onClickCard = () => () => {};
+  const onClickCard = ({ patronId, photoUrl, name, ...request }) => () => {
+    history.push(`${request.requestNumber}/patrons/${patronId}/live-bid`, {
+      photoUrl,
+      name,
+      requestId: request.id,
+    });
+  };
 
   return (
     <>
@@ -56,4 +66,4 @@ const PatronPostsRequests = () => {
   );
 };
 
-export default PatronPostsRequests;
+export default StorkRequestsMatches;
