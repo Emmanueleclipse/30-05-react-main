@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { SignUpProvider } from '@contexts/useSignUpForm';
+import { SignUpProvider } from '@contexts/all/useSignUpForm';
 import SignUp from '@screens/onboarding/SignUp';
 import SignUpForm from '@screens/onboarding/SignUpForm';
 
