@@ -24,7 +24,7 @@ const PatronRequestsNavigator = () => {
 
   const HeaderComponent = () => (
     <WhiteHeader
-      onClickLeft={() => history.push('/home')}
+      onClickLeft={() => {}}
       title="PATRON REQUESTS"
       withRightIcons
       withAvatar
