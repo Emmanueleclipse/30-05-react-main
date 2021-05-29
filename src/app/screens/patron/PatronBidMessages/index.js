@@ -42,11 +42,15 @@ const PatronBidMessages = () => {
 
     if (inputMessage) {
       const newMessage = {
-        id: Date.now(), // Temporal id
-        senderId: 32, // TODO: Replace 'senderId' dynamically
+        id: Date.now(), // TODO: Update 'id' dynamically
+        senderId: 32, // TODO: Update 'senderId' dynamically
         text: inputMessage,
       };
+
+      // TODO: Handle Success
       const onSuccess = () => {};
+
+      // TODO: Handle Error
       const onError = () => {};
       mutationBidMessage.mutate(formData, { onSuccess, onError });
       setMessages([...messages, newMessage]);
